@@ -1,0 +1,57 @@
+This package was debianized by Daniel Holbach <daniel.holbach@ubuntu.com> on
+Mon, 13 Feb 2006 12:09:30 +0100.
+
+It was downloaded from http://ftp.gnome.org/pub/GNOME/sources/gnome-commander/
+
+Copyright Holder: 2001-2006
+                Marcus Bjurman <marbj499@student.liu.se>
+		Piotr Eljasiak <epiotr@use.pl>
+		Assaf Gordon <agordon88@gmail.com>
+
+License:
+
+   This package is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+
+   This package is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this package; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.
+
+
+
+Some part of the source are distributed under the LGPL:
+/* gnome-about.h - An about box widget for gnome.
+
+   Copyright (C) 2001 CodeFactory AB
+   Copyright (C) 2001 Anders Carlsson <andersca@codefactory.se>
+
+   The Gnome Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Library General Public License as
+   published by the Free Software Foundation; either version 2 of the
+   License, or (at your option) any later version.
+
+   The Gnome Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Library General Public License for more details.
+
+   You should have received a copy of the GNU Library General Public
+   License along with the Gnome Library; see the file COPYING.LIB.  If not,
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
+
+   Author: Anders Carlsson <andersca@codefactory.se>
+*/
+
+On Debian systems, the complete text of the GNU Library General
+Public License can be found in `/usr/share/common-licenses/LGPL'.

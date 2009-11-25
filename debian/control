@@ -1,0 +1,29 @@
+Source: gnome-commander
+Section: gnome
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Michael Vogt <mvo@debian.org>
+Build-Depends: cdbs, debhelper (>= 5),
+ libglib2.0-dev (>= 2.0),
+ libgtk2.0-dev (>= 2.8),
+ libgnome2-dev (>= 2.0),
+ libgnomeui-dev (>= 2.4),
+ libgnomevfs2-dev (>= 2.0),
+ libxml-parser-perl,
+ gnome-doc-utils,
+ rarian-compat,
+ libtag1-dev (>= 1.4),
+ libexiv2-dev (>= 0.14),
+ libpoppler-dev (>= 0.6),
+ quilt
+Standards-Version: 3.8.3
+
+Package: gnome-commander
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Homepage: http://www.nongnu.org/gcmd/
+Description: nice and fast file manager for the GNOME desktop
+ GNOME Commander is a fast and powerful graphical filemanager for the GNOME 
+ desktop environment, it has a "two-pane" interface in the tradition of 
+ Norton and Midnight Commander.
+ .

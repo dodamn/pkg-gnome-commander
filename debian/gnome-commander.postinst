@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+# version 1.2.0-1 started shipping /var/lib/scrollkeeper erroneously, hence
+# the database was overwritten and needs a full rebuild
+if [ "$1" = "configure" ] && dpkg --compare-versions "$2" ge "1.2.0-1" && dpkg --compare-versions "$2" lt "1.2.0-3.2" && which scrollkeeper-rebuilddb >/dev/null 2>&1; then
+    echo "Upgrade from broken GNOME Commander version detected, running scrollkeeper-rebuilddb..."
+    scrollkeeper-rebuilddb -q
+fi
+
+#DEBHELPER#

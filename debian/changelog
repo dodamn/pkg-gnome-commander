@@ -1,0 +1,128 @@
+gnome-commander (1.2.8.3-0ubuntu1) lucid; urgency=low
+
+  * New upstream release.
+  * debian/control: Replace scrollkeeper with rarian-compat.
+  * Now actually uses quilt, drop simple patchsys.
+  * Refresh patches.
+
+ -- Alessio Treglia <quadrispro@ubuntu.com>  Thu, 26 Nov 2009 00:32:52 +0100
+
+gnome-commander (1.2.8.2-0ubuntu2) lucid; urgency=low
+
+  * Added quilt patch system.
+  * debian/patches/01_sort_by_size_fix.patch: added my_filesizecmp 
+    method with GnomeVFSFileSize params instead of gint (LP: #369818).
+
+ -- Marcin Wider <mwider@gmail.com>  Fri, 30 Oct 2009 15:27:16 +0100
+
+gnome-commander (1.2.8.2-0ubuntu1) karmic; urgency=low
+
+  * New upstream release (LP: #436429).
+
+ -- Ilya Barygin <barygin@gmail.com>  Fri, 25 Sep 2009 11:29:33 +0400
+
+gnome-commander (1.2.8.1-0ubuntu1) karmic; urgency=low
+
+  * New upstream release (LP: #415782).
+  * Added watch file.
+  * Added libpoppler-dev (>= 0.6) to build-depends.
+  * Fixed poppler-related build problem (patch backported from
+    upstream git, commit eada5b0f65cf).
+
+ -- Ilya Barygin <barygin@gmail.com>  Tue, 15 Sep 2009 09:52:54 +0400
+
+gnome-commander (1.2.7-1build1) jaunty; urgency=low
+
+  * No-change rebuild for exiv2 0.18 (LP: 309684)
+
+ -- Luka Renko <lure@ubuntu.com>  Tue, 17 Mar 2009 19:28:34 +0100
+
+gnome-commander (1.2.7-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Michael Vogt <mvo@debian.org>  Tue, 09 Sep 2008 21:59:34 +0200
+
+gnome-commander (1.2.6-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Michael Vogt <mvo@debian.org>  Tue, 15 Jul 2008 10:35:05 +0200
+
+gnome-commander (1.2.5-1) unstable; urgency=low
+
+  * New upstream release
+  * Thanks to Christopher Sauthier for the help
+    with the update
+
+ -- Michael Vogt <mvo@debian.org>  Wed, 12 Mar 2008 19:55:49 +0100
+
+gnome-commander (1.2.4-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Michael Vogt <mvo@debian.org>  Mon, 11 Jun 2007 09:37:03 +0200
+
+gnome-commander (1.2.3-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Michael Vogt <mvo@debian.org>  Tue, 12 Dec 2006 10:25:21 +0100
+
+gnome-commander (1.2.2-1) unstable; urgency=low
+
+  * New upstream release (closes: #401228)
+
+ -- Michael Vogt <mvo@debian.org>  Mon, 11 Dec 2006 09:49:10 +0100
+
+gnome-commander (1.2.0-3.2) unstable; urgency=medium
+
+  * Non-maintainer upload. 
+  * Fix typo in debian/rules which caused the files in
+    /var/lib/scrollkeeper to be shipped. (Closes: #386319)
+  * Also repair scrollkeeper database up to this version as previos NMU
+    still shipped the /var/lib/scrollkeeper files.
+
+ -- Arjan Oosting <arjanoosting@home.nl>  Wed, 27 Sep 2006 14:08:02 +0200
+
+gnome-commander (1.2.0-3.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * If scrollkeeper is installed, repair the scrollkeeper database for
+    upgrades from versions >= 1.2.0-1 via postinst; see #383201 for
+    discussion.
+
+ -- Loic Minier <lool@dooz.org>  Sun,  3 Sep 2006 16:22:55 +0200
+
+gnome-commander (1.2.0-3) unstable; urgency=low
+
+  * added --disable-scrollkeeper on build
+
+ -- Michael Vogt <mvo@debian.org>  Tue, 13 Jun 2006 15:39:48 +0200
+
+gnome-commander (1.2.0-2) unstable; urgency=low
+
+  * fix FTBFS (Closes: #370239) by adding gnome-doc-utils,
+    scrollkeeper to the build-depends
+
+ -- Michael Vogt <mvo@debian.org>  Tue,  6 Jun 2006 14:58:44 +0200
+
+gnome-commander (1.2.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Michael Vogt <mvo@debian.org>  Fri,  2 Jun 2006 09:40:37 +0200
+
+gnome-commander (1.1.7-2) unstable; urgency=low
+
+  * fixed debian/copyright file
+
+ -- Michael Vogt <mvo@debian.org>  Mon, 27 Mar 2006 10:06:52 +0200
+
+gnome-commander (1.1.7-1) unstable; urgency=low
+
+  * initial release into debian, based on the ubuntu packaging from
+    Daniel Holbach (thanks!)
+
+ -- Michael Vogt <mvo@debian.org>  Tue, 14 Feb 2006 11:35:05 +0100
+
