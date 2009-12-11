@@ -1,3 +1,12 @@
+gnome-commander (1.2.8.4-0ubuntu1~ppa1~jaunty1) jaunty; urgency=low
+
+  * New Upstream Version
+  * Drop a patch which is now integrated in new upstream
+    - 01_sort_by_size_fix.patch
+  * Update package maintainer name and packaging date
+
+ -- dodamn <dodamn@gmail.com>  Sat, 12 Dec 2009 00:01:51 +0900
+
 gnome-commander (1.2.8.3-0ubuntu1) lucid; urgency=low
 
   * New upstream release.
