@@ -1,9 +1,8 @@
 Source: gnome-commander
 Section: gnome
 Priority: optional
-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
-XSBC-Original-Maintainer: Michael Vogt <mvo@debian.org>
-Build-Depends: cdbs, debhelper (>= 5),
+Maintainer: dodamn <dodamn@gmail.com>
+XSBC-Original-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
  libglib2.0-dev (>= 2.0),
  libgtk2.0-dev (>= 2.8),
  libgnome2-dev (>= 2.0),
