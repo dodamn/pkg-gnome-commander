@@ -1,6 +1,93 @@
+commit 93011100fc8d2c14e3c51a206409b83afca8a4a5
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:   2009-12-03
+
+    1.2.8.4 release
+
+M	doc/C/gnome-commander.xml
+M	doc/gnome-commander.1
+
+commit 60f4e6e19b8f9853e700ed2ee5f0fc091dcaa0df
+Author: Mamoru Tasaka <mtasaka@ioa.s.u-tokyo.ac.jp>
+Date:	2009-12-02
+
+    Fixed problem #603301 (crash when cancelling symlink creation by ESC)
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	libgcmd/gnome-cmd-dialog.c
+M	libgcmd/gnome-cmd-string-dialog.c
+
+commit b0a529770ae7fceb5c525e37a0eedfae3d89a4d0
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-11-25
+
+    Fixed problem #602916 (non-working menu entry)
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	src/gnome-cmd-main-menu.cc
+
+commit 58e2ebc333dc601cf375fd16ee339700c551f0de
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-11-12
+
+    Fixed problem with stalled keyboard after ALT+1/2 with hidden
+    device list
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	src/gnome-cmd-main-win.cc
+
+commit 3aed1d0e45522b478bda77e428938aab4ebb981d
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2009-11-08
+
+    Updated German doc translation
+
+M	doc/de/de.po
+
+commit 6ac62cfa47cf54a4d021a1caa05a7562bfabcf7f
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-11-08
+
+    Fixed problem with not working keypad enter in copy/move dialog
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	src/gnome-cmd-prepare-xfer-dialog.cc
+
+commit e4e6cde02a921cd9c138314798f94cfcff9f3dc3
+Author: Marcin Wider <mwider@gmail.com>
+Date:	2009-10-30
+
+    Fixed Ubuntu problem #369818 (incorrect sorting by size in panel)
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	src/gnome-cmd-file-list.cc
+
+commit 4f23052ab24f104863feec74eb83def5ca27ef19
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-10-30
+
+    Docs fix
+
+M	doc/C/gnome-commander.xml
+
+commit 95f059443104228c3b13aa4fcc629a3163b9fe0d
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-10-30
+
+    Bumped version to 1.2.8.4
+
+M	NEWS
+M	configure.in
+M	doc/C/gnome-commander.xml
+
 commit 1ac19d7e2e5f22bbac1a8b6514b349eeab8339d9
 Author: Piotr Eljasiak <epiotr@src.gnome.org>
-Date:   2009-10-28
+Date:	2009-10-28
 
     1.2.8.3 release
 

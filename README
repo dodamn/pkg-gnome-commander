@@ -1,4 +1,4 @@
-                GNOME Commander Version 1.2.8.3
+                GNOME Commander Version 1.2.8.4
 
                 Copyright (C) 2001-2006 Marcus Bjurman <marbj499@student.liu.se>
                 Copyright (C) 2007-2009 Piotr Eljasiak <epiotr@use.pl>
@@ -95,8 +95,8 @@ Additionally GNOME Commander may require:
 
 Simple install procedure:
 
-  % gzip -cd gnome-commander-1.2.8.3.tar.gz | tar xvf - 	# unpack the sources
-  % cd gnome-commander-1.2.8.3		# change to the toplevel directory
+  % gzip -cd gnome-commander-1.2.8.4.tar.gz | tar xvf - 	# unpack the sources
+  % cd gnome-commander-1.2.8.4		# change to the toplevel directory
   % ./configure							# run the `configure' script
   % make								# build GNOME Commander
   [ Become root if necessary ]

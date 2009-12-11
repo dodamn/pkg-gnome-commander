@@ -2,9 +2,9 @@
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
 <!ENTITY author "Piotr Eljasiak">
 <!ENTITY legal SYSTEM "legal.xml">
-<!ENTITY appversion "1.2.8.3">
-<!ENTITY manrevision "1.2.8.3">
-<!ENTITY date "October 2009">
+<!ENTITY appversion "1.2.8.4">
+<!ENTITY manrevision "1.2.8.4">
+<!ENTITY date "November 2009">
 <!ENTITY app "GNOME Commander">
 <!-- Information about the entities
        The legal.xml file contains legal information, there is no need to edit the file.
@@ -26,7 +26,7 @@
 
   <articleinfo>
     <title>GNOME-Commander-Handbuch</title>
-    <subtitle>GNOME Commander Desktop Application Manual V1.2.8.3</subtitle>
+    <subtitle>GNOME Commander Desktop Application Manual V1.2.8.4</subtitle>
     <copyright>
       <year>2009</year>
       <year>2008</year>
@@ -159,7 +159,15 @@
       </revision>
       <revision>
         <revnumber>GNOME-Commander-Handbuch V1.2.8.3;</revnumber>
-        <date>2009-10-28</date>
+        <date>28. Oktober 2009</date>
+        <revdescription>
+            <para role="author">Piotr Eljasiak <email>epiotr@cvs.gnome.org</email></para>
+            <para role="publisher">GNOME-Dokumentationsprojekt</para>
+        </revdescription>
+      </revision>
+      <revision>
+        <revnumber>GNOME-Commander-Handbuch V1.2.8.4;</revnumber>
+        <date>2009-12-03</date>
         <revdescription>
             <para role="author">Piotr Eljasiak <email>epiotr@cvs.gnome.org</email></para>
             <para role="publisher">GNOME-Dokumentationsprojekt</para>
@@ -167,7 +175,7 @@
       </revision>
     </revhistory>
 
-    <releaseinfo>This manual describes version 1.2.8.3 of GNOME Commander.
+    <releaseinfo>This manual describes version 1.2.8.4 of GNOME Commander.
     </releaseinfo>
     <legalnotice>
       <title>Rückmeldungen</title>
@@ -889,7 +897,13 @@
                   <guilabel>Vorlage</guilabel>
               </term>
               <listitem>
-                  <para>Legt die Vorlage zur Dateiumbenennung fest. Alle normalen Zeichen im Formatstring werden in den neuen Namen ohne Umwandlung übernommen. Die Umwandlungsregeln werden durch einige <link linkend="gnome-commander-advanced-rename-placeholders">Platzhalter</link> bestimmt (siehe untenstehende detaillierte Liste). Zusätzlich werden <link linkend="gnome-commander-advanced-rename-strftime">strftime()-Formatierungen</link> ebenfalls berücksichtigt - außer für »%D«, »%n« und »%t« aus naheliegenden Gründen. Falls diese gefunden werden, werden sie in ein einfaches »%« umgewandelt.</para>
+                  <para>Specifies template for file renaming. All ordinary characters placed in the format string
+                        go into the new name without conversion. Conversion specifiers are introduced by a few
+                        <link linkend="gnome-commander-advanced-rename-placeholders">placeholders</link>
+                        (see below for the detailed list). Additionally
+                        <link linkend="gnome-commander-advanced-rename-strftime">strftime() format controls</link>
+                        are also accepted - except for "%D", "%n" and "%t" for obvious reasons.
+                        If found, they are converted into single "%".</para>
               </listitem>
           </varlistentry>
           <varlistentry>
@@ -5775,6 +5789,67 @@
     </thead>
     <tbody>
         <row valign="top">
+            <entry><para>1.2.8.4</para></entry>
+            <entry><para>2009-12-03</para></entry>
+            <entry>
+                <para>Fehlerkorrekturen:</para>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Fixed problem #602916 (not working menu entry)</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fixed problem #603301 (crash when cancelling symlink creation by ESC)</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fehlerkorrektur #347817 aus Ubuntu (unkorrekte Sortierung nach Größe im Panel)</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fixed problem with not working keypad enter in copy/move dialog</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fixed problem with stalled keyboard after ALT+1/2 with hidden device list</para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+            </entry>
+        </row>
+        <row valign="top">
+            <entry><para>1.2.8.3</para></entry>
+            <entry><para>28. Oktober 2009</para></entry>
+            <entry>
+                <para>Fehlerkorrekturen:</para>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Fehlerkorrektur #541891 (Dateinamen mit % in der erweiterten Mehrfachumbenennung)</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fehlerkorrektur #581645 (unkomfortable Schnellsuche)</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fehlerkorrektur #539753 (Build-Warnungen von Python)</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fehlerkorrektur #596973 (Fehler bei der Dokumentationserstellung)</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fehlerkorrektur #597144 (Fehlender Aufruf zu pclose)</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fehlerkorrektur #597233 (Überprüfung der Hanbuchübersetzungen)</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fehlerkorrektur #597890 (falsche an Meld übergebene Argumente)</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fehlerkorrektur #598278 (Speicherleck)</para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+            </entry>
+        </row>
+        <row valign="top">
             <entry><para>1.2.8.2</para></entry>
             <entry><para>22. September 2009</para></entry>
             <entry>
@@ -5792,41 +5867,6 @@
                         </listitem>
                         <listitem>
                             <para>Beseitigtes Problem mit falschem Dateisymbol beim Umbenennen einer symbolischen Verknüpfung</para>
-                        </listitem>
-                    </itemizedlist>
-                </para>
-            </entry>
-        </row>
-        <row valign="top">
-            <entry><para>1.2.8.3</para></entry>
-            <entry><para>2009-10-28</para></entry>
-            <entry>
-                <para>Fehlerkorrekturen:</para>
-                <para>
-                    <itemizedlist>
-                        <listitem>
-                            <para>Fixed problem #541891 (file names with % in advanced file rename tool)</para>
-                        </listitem>
-                        <listitem>
-                            <para>Fehlerkorrektur #581645 (unkomfortable Schnellsuche)</para>
-                        </listitem>
-                        <listitem>
-                            <para>Fehlerkorrektur #539753 (Build-Warnungen von Python)</para>
-                        </listitem>
-                        <listitem>
-                            <para>Fehlerkorrektur #596973 (Fehler bei der Dokumentationserstellung)</para>
-                        </listitem>
-                        <listitem>
-                            <para>Fixed problem #597144 (missing call to pclose)</para>
-                        </listitem>
-                        <listitem>
-                            <para>Fehlerkorrektur #597233 (Überprüfung der Hanbuchübersetzungen)</para>
-                        </listitem>
-                        <listitem>
-                            <para>Fixed problem #597890 (wrong arguments passed to meld)</para>
-                        </listitem>
-                        <listitem>
-                            <para>Fixed problem #598278 (memory leak)</para>
                         </listitem>
                     </itemizedlist>
                 </para>

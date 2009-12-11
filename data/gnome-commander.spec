@@ -4,7 +4,7 @@
 # Source archive's extension can be specified with rpm --define 'srcext .foo'
 # where .foo is the source archive's actual extension.
 # To compile an RPM from a .gz source archive, give the command
-#   rpmbuild -tb --define 'srcext .gz' gnome-commander-1.2.8.3.tar.gz
+#   rpmbuild -tb --define 'srcext .gz' gnome-commander-1.2.8.4.tar.gz
 #
 
 %if %{?rel:0}%{!?rel:1}
@@ -21,7 +21,7 @@
 %define        poppler_ver           0.6
 
 Name:          gnome-commander
-Version:       1.2.8.3
+Version:       1.2.8.4
 Release:       %{rel}%{?dist}
 Summary:       A nice and fast file manager for the GNOME desktop
 Summary(pl):   Menadżer plików dla GNOME oparty o Norton Commander'a (TM)

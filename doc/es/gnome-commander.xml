@@ -2,9 +2,9 @@
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
 <!ENTITY author "Piotr Eljasiak">
 <!ENTITY legal SYSTEM "legal.xml">
-<!ENTITY appversion "1.2.8.3">
-<!ENTITY manrevision "1.2.8.3">
-<!ENTITY date "October 2009">
+<!ENTITY appversion "1.2.8.4">
+<!ENTITY manrevision "1.2.8.4">
+<!ENTITY date "November 2009">
 <!ENTITY app "GNOME Commander">
 <!-- Information about the entities
        The legal.xml file contains legal information, there is no need to edit the file.
@@ -26,7 +26,7 @@
 
   <articleinfo>
     <title>GNOME Commander Manual</title>
-    <subtitle>GNOME Commander Desktop Application Manual V1.2.8.3</subtitle>
+    <subtitle>GNOME Commander Desktop Application Manual V1.2.8.4</subtitle>
     <copyright>
       <year>2009</year>
       <year>2008</year>
@@ -165,9 +165,17 @@
             <para role="publisher">Proyecto de documentación de GNOME</para>
         </revdescription>
       </revision>
+      <revision>
+        <revnumber>GNOME Commander Manual V1.2.8.4;</revnumber>
+        <date>2009-12-03</date>
+        <revdescription>
+            <para role="author">Piotr Eljasiak <email>epiotr@cvs.gnome.org</email></para>
+            <para role="publisher">Proyecto de documentación de GNOME</para>
+        </revdescription>
+      </revision>
     </revhistory>
 
-    <releaseinfo>This manual describes version 1.2.8.3 of GNOME Commander.
+    <releaseinfo>This manual describes version 1.2.8.4 of GNOME Commander.
     </releaseinfo>
     <legalnotice>
       <title>Comentarios</title>
@@ -5951,23 +5959,26 @@
     </thead>
     <tbody>
         <row valign="top">
-            <entry><para>1.2.8.2</para></entry>
-            <entry><para>2009-09-22</para></entry>
+            <entry><para>1.2.8.4</para></entry>
+            <entry><para>2009-12-03</para></entry>
             <entry>
                 <para>Correcciones de errores:</para>
                 <para>
                     <itemizedlist>
                         <listitem>
-                            <para>Fixed problem #591944 (permissions set to 000 after chmod)</para>
+                            <para>Fixed problem #602916 (not working menu entry)</para>
                         </listitem>
                         <listitem>
-                            <para>Fixed problem #595097 (build error for poppler &gt;= 0.11.3)</para>
+                            <para>Fixed problem #603301 (crash when cancelling symlink creation by ESC)</para>
                         </listitem>
                         <listitem>
-                            <para>Fixed debian problem #438884 (wrong device label when switching panels with CTRL+U)</para>
+                            <para>Fixed Ubuntu problem #369818 (incorrect sorting by size in panel)</para>
                         </listitem>
                         <listitem>
-                            <para>Fixed problem with broken file icon after renaming a symbolic link</para>
+                            <para>Fixed problem with not working keypad enter in copy/move dialog</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fixed problem with stalled keyboard after ALT+1/2 with hidden device list</para>
                         </listitem>
                     </itemizedlist>
                 </para>
@@ -6003,6 +6014,29 @@
                         </listitem>
                         <listitem>
                             <para>Fixed problem #598278 (memory leak)</para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+            </entry>
+        </row>
+        <row valign="top">
+            <entry><para>1.2.8.2</para></entry>
+            <entry><para>2009-09-22</para></entry>
+            <entry>
+                <para>Correcciones de errores:</para>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Fixed problem #591944 (permissions set to 000 after chmod)</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fixed problem #595097 (build error for poppler &gt;= 0.11.3)</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fixed debian problem #438884 (wrong device label when switching panels with CTRL+U)</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fixed problem with broken file icon after renaming a symbolic link</para>
                         </listitem>
                     </itemizedlist>
                 </para>
