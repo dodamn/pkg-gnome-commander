@@ -1,0 +1,415 @@
+commit 1ac19d7e2e5f22bbac1a8b6514b349eeab8339d9
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:   2009-10-28
+
+    1.2.8.3 release
+
+M	doc/C/gnome-commander.xml
+M	doc/gnome-commander.1
+
+commit 174a9c319ea5fb5a2597a4974d1141b4c80b7dfc
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-10-26
+
+    Fixed problem #541891 (file names with % in advanced file rename tool)
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	src/gnome-cmd-advrename-lexer.ll
+
+commit 3b2771a570a4faa41c568c67238b531b1aab6e42
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-10-24
+
+    advrename: call strftime() only if template contains % character
+
+M	src/gnome-cmd-advrename-lexer.ll
+
+commit 169b5b7247711baf25d30f9508bc33cc3efc4d22
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-10-24
+
+    advrename: replaced ECHO() macro with inlined echo() function
+    counterpart
+
+M	src/gnome-cmd-advrename-lexer.ll
+
+commit ce6a2948c4ed08c0355c10825508b612189824cb
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-10-23
+
+    advrename: concatenate consecutive TEXT chunks into one TEXT chunk
+
+M	src/gnome-cmd-advrename-lexer.ll
+
+commit 834f7817ce822b54a3b3391624ddc7cc91f6ce3d
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-10-23
+
+    advrename: concatenate consecutive non-[%$] chars into single
+    TEXT chunk
+
+M	src/gnome-cmd-advrename-lexer.ll
+
+commit 627e6cc0be401b7555cc05de4db06cc3528698d0
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-10-21
+
+    advrename: simplify code for handling %[Dnt] tokens
+
+M	src/gnome-cmd-advrename-lexer.ll
+
+commit 0e615faf9d2b2979f3c4ea928d84c6c4f840bb63
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-10-20
+
+    advrename: do not parse file name, ext and dir for empty templates
+
+M	src/gnome-cmd-advrename-lexer.ll
+
+commit b9b8ac0d3faa6c5186f47654fa8e83821282e226
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-10-20
+
+    advrename: eliminate redundant g_strdup()
+
+    GnomeCmdAdvrenameDialog::update_new_filenames() used local buff[]
+    for generating new fname from the given template,
+    and then it copied the buff[] content into newly allocated string
+    with g_strdup(). The fix makes it generate
+    new fname directly in the allocated memory avoiding unnecessary copy.
+
+M	src/gnome-cmd-advrename-dialog.cc
+M	src/gnome-cmd-advrename-lexer.h
+M	src/gnome-cmd-advrename-lexer.ll
+
+commit 40ffe7304cec252e5f3da883749a9b030acf1384
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-10-19
+
+    typo: characeter -> character
+
+M	src/intviewer/inputmodes.cc
+M	src/intviewer/text-render.cc
+
+commit 38b6deed90637b28cbee6d2066d799a01e9fe3f8
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-10-19
+
+    docs: reduced size of figures/gnome-commander_window.png a bit more
+
+M	doc/C/figures/gnome-commander_window.png
+
+commit 2b92e4d5e92bd42add9e1b571c18ed7845d9e984
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2009-10-17
+
+    Updated German doc translation
+
+M	doc/de/de.po
+
+commit 3b4576c4ced6b02b325a219f9137c4308771ddfa
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-10-17
+
+    Fixed problem #598278 (memory leak)
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	src/gnome-cmd-dir-indicator.cc
+
+commit e6d377e039f11f84f15649e07e43fe7694df4477
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-10-11
+
+    Fixed problem #597890 (wrong arguments passed to meld)
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	src/gnome-cmd-user-actions.cc
+
+commit 9464fb499ca2eabd1439183baf9d5c4558e16c96
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-10-09
+
+    Fixed problem #581645 (uncomfortable quick search)
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	src/gnome-cmd-quicksearch-popup.cc
+
+commit e2e0fc457b3347cd7ecb90409732b876ed0fa9ca
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-10-09
+
+    docs: reduced size of figures/gnome-commander_window.png
+
+M	doc/C/figures/gnome-commander_window.png
+
+commit 32eba49d317b2bcca801e44b3046a1f2ffb62a2a
+Author: Niklas Mattisson <niklas.mattisson@gmail.com>
+Date:	2009-10-04
+
+    Fixed problem #597233 (validating of doc translations)
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	doc/de/de.po
+
+commit 50f66c930806a28035c3b0bbb91e25afbddb5f94
+Author: Vincent Untz <vuntz@gnome.org>
+Date:	2009-10-03
+
+    Fixed problem #597144 (missing call to pclose)
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	src/utils.cc
+
+commit fc3914a3ec2fd5bd5c86344079bfb7007da8ecde
+Author: Niklas Mattisson <niklas.mattisson@gmail.com>
+Date:	2009-10-01
+
+    Fixed problem #596973 (documentation build error)
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+
+commit 44ffdab4a215d0ad8705d80e8d01bc7c29bff07d
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2009-09-30
+
+    Updated German doc translation
+
+M	doc/de/de.po
+
+commit 74fb966dd27ddcaba203fb7b6d3ebc59e729888c
+Author: Niklas Mattisson <niklas.mattisson@gmail.com>
+Date:	2009-09-30
+
+    Fixed problem #596768 (build warnings for python)
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	m4/python.m4
+
+commit 4b42e3757a014df014235479ac262a02607f3ae8
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-09-28
+
+    File properties: use 'Directory name:' intead of 'File name:'
+    for directories
+
+M	src/gnome-cmd-file-props-dialog.cc
+
+commit 5928b449f82af230f5f5cd7c833dd092bee41d08
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-09-29
+
+    Bumped version to 1.2.8.3
+
+M	NEWS
+M	configure.in
+M	doc/C/gnome-commander.xml
+
+commit 6b02dbb37babb21953bda20cfc9b192219936843
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-09-22
+
+    1.2.8.2 release
+
+M	doc/C/gnome-commander.xml
+M	doc/gnome-commander.1
+
+commit 21407e8ed96af645b4c54c504e009e9e0aef4e6d
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-09-22
+
+    Fixed debian problem #438884 (wrong device label when switching
+    panels with CTRL+U)
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	src/gnome-cmd-main-win.cc
+
+commit 72548f178688c97429d09ab4d6ab22153b8f5ae5
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-09-17
+
+    This reverts bug introduced in commit
+    91ee2dd9a34e0ef89a6797e517e5a715b985ffb9
+
+M	doc/C/gnome-commander.xml
+
+commit 00c6af0f90da40e2f63567c3e15039a7b8db7c2d
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-09-14
+
+    Fixed problem #595097 (build error for poppler >= 0.11.3)
+
+M	NEWS
+M	configure.in
+M	doc/C/gnome-commander.xml
+M	src/tags/gnome-cmd-tags-poppler.cc
+
+commit e1344cc3f66e9a9bf69c54453cbaf011d7215bd7
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-09-12
+
+    Fixed a typo
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+
+commit 81cf270a66ae30acf3b1fa8788925fea55463972
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-09-12
+
+    Fixed problem with broken file icon after renaming a symbolic link
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	src/gnome-cmd-file.cc
+
+commit c02a55df27fa8d1248db21d8cfb107159721ecd2
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-09-12
+
+    Do not call IMAGE_get_pixmap_and_mask() twice when displaying
+    file icons
+
+    That should spare a few cpu cycles when in file icon mode.
+
+M	src/gnome-cmd-file-list.cc
+M	src/gnome-cmd-file.cc
+M	src/gnome-cmd-file.h
+
+commit 17d3666afc963d73439cbbc95614739cf1ee9d49
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-08-20
+
+    This reverts bug introduced in commit
+    4c43d96b98f8dd5c8cc33fc92f4ae3ffc9840cfb (Migration to C++ #2)
+
+M	src/gnome-cmd-prepare-copy-dialog.cc
+
+commit 7282783e7cb95d692be3e699edf3f5408fc7b759
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-08-19
+
+    Fixed problem #591944 (permissions set to 000 after chmod)
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	src/gnome-cmd-chmod-component.cc
+
+commit 91ee2dd9a34e0ef89a6797e517e5a715b985ffb9
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-08-19
+
+    Bumped version to 1.2.8.2
+
+M	NEWS
+M	configure.in
+M	doc/C/gnome-commander.xml
+
+commit 87bd1c0f188fb0c3564e9eb6db1cdbc17a8c50e8
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-08-10
+
+    1.2.8.1 release
+
+M	doc/C/gnome-commander.xml
+M	doc/gnome-commander.1
+
+commit 390867cc09f2b0c2ababe268abf8ca6f6f658beb
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-08-10
+
+    Fixed problem #591206 (crash while sysconf() on FreeBSD)
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	src/owner.cc
+
+commit 8fa107ed01acc408c04051f10cfc0ab5652a1d63
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-08-01
+
+    Fixed problem with $c(16) counter formatting in advanced file rename
+    templates
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	src/gnome-cmd-advrename-lexer.ll
+
+commit 252059b87bf344d426717aa0e558b7701fb22ab7
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-08-10
+
+    Fixed problem #589108 (build error on openSUSE)
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	src/gnome-cmd-convert.cc
+
+commit f9e76a9704f147f8edd638e8070a098110feeffb
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-08-10
+
+    Fixed problem #587325 (crash in a clean chroot environment)
+
+M	NEWS
+M	doc/C/gnome-commander.xml
+M	src/gnome-cmd-bookmark-dialog.cc
+M	src/gnome-cmd-main-menu.cc
+
+commit ee4e701572edb359c38f982c8dadc1f1ecbb1d02
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-06-30
+
+    Add makefile rules to generate ChangeLog
+
+M	ChangeLog-20090629
+M	Makefile.am
+M	doc/ChangeLog-20090629
+M	po/ChangeLog-20090629
+
+commit 196b0dec36d0e4bdc60f97477901aac9a7f6532f
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-06-30
+
+    Autogenerate ChangeLog file
+
+A	ChangeLog
+A	doc/ChangeLog
+A	po/ChangeLog
+
+commit 61c798b8e28b8910d037d4236b3184101d0c3601
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-06-30
+
+    Rename old ChangeLog files
+
+R100	ChangeLog	ChangeLog-20090629
+R100	doc/ChangeLog	doc/ChangeLog-20090629
+R100	po/ChangeLog	po/ChangeLog-20090629
+
+commit 5f30f7f6fa157025fe5c61b873f3c4d84150a9f9
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-06-30
+
+    Added README.commits
+
+M	Makefile.am
+A	README.commits
+
+commit 13aef4ff5600a9079af3c4fdec1a2c6e5844e4e7
+Author: Piotr Eljasiak <epiotr@src.gnome.org>
+Date:	2009-08-10
+
+    Bumped version to 1.2.8.1
+
+M	NEWS
+M	configure.in
+M	doc/C/gnome-commander.xml
