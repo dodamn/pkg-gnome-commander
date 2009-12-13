@@ -69,6 +69,10 @@ struct GnomeCmdData::Private
     gchar                *symlink_prefix;
 
     gchar                *ftp_anonymous_password;
+
+#ifdef EDITABLE_LS_COLORS_PALETTE
+    GnomeCmdLsColorsPalette ls_colors_palette;
+#endif
 };
 
 
@@ -1338,6 +1342,42 @@ void GnomeCmdData::load()
     device_only_icon = gnome_cmd_data_get_bool ("/devices/only_icon", FALSE);
     use_ls_colors = gnome_cmd_data_get_bool ("/colors/use_ls_colors", FALSE);
 
+#ifdef EDITABLE_LS_COLORS_PALETTE
+    priv->ls_colors_palette.black_fg = gdk_color_new (0, 0, 0);
+    priv->ls_colors_palette.black_bg = gdk_color_new (0, 0, 0);
+    priv->ls_colors_palette.red_fg = gdk_color_new (0xffff, 0, 0);
+    priv->ls_colors_palette.red_bg = gdk_color_new (0xffff, 0, 0);
+    priv->ls_colors_palette.green_fg = gdk_color_new (0, 0xffff, 0);
+    priv->ls_colors_palette.green_bg = gdk_color_new (0, 0xffff, 0);
+    priv->ls_colors_palette.yellow_fg = gdk_color_new (0xffff, 0xffff, 0);
+    priv->ls_colors_palette.yellow_bg = gdk_color_new (0xffff, 0xffff, 0);
+    priv->ls_colors_palette.blue_fg = gdk_color_new (0, 0, 0xffff);
+    priv->ls_colors_palette.blue_bg = gdk_color_new (0, 0, 0xffff);
+    priv->ls_colors_palette.magenta_fg = gdk_color_new (0xffff, 0, 0xffff);
+    priv->ls_colors_palette.magenta_bg = gdk_color_new (0xffff, 0, 0xffff);
+    priv->ls_colors_palette.cyan_fg = gdk_color_new (0, 0xffff, 0xffff);
+    priv->ls_colors_palette.cyan_bg = gdk_color_new (0, 0xffff, 0xffff);
+    priv->ls_colors_palette.white_fg = gdk_color_new (0xffff, 0xffff, 0xffff);
+    priv->ls_colors_palette.white_bg = gdk_color_new (0xffff, 0xffff, 0xffff);
+
+    gnome_cmd_data_get_color ("/colors/ls_colors_black_fg", priv->ls_colors_palette.black_fg);
+    gnome_cmd_data_get_color ("/colors/ls_colors_black_bg", priv->ls_colors_palette.black_bg);
+    gnome_cmd_data_get_color ("/colors/ls_colors_red_fg", priv->ls_colors_palette.red_fg);
+    gnome_cmd_data_get_color ("/colors/ls_colors_red_bg", priv->ls_colors_palette.red_bg);
+    gnome_cmd_data_get_color ("/colors/ls_colors_green_fg", priv->ls_colors_palette.green_fg);
+    gnome_cmd_data_get_color ("/colors/ls_colors_green_bg", priv->ls_colors_palette.green_bg);
+    gnome_cmd_data_get_color ("/colors/ls_colors_yellow_fg", priv->ls_colors_palette.yellow_fg);
+    gnome_cmd_data_get_color ("/colors/ls_colors_yellow_bg", priv->ls_colors_palette.yellow_bg);
+    gnome_cmd_data_get_color ("/colors/ls_colors_blue_fg", priv->ls_colors_palette.blue_fg);
+    gnome_cmd_data_get_color ("/colors/ls_colors_blue_bg", priv->ls_colors_palette.blue_bg);
+    gnome_cmd_data_get_color ("/colors/ls_colors_magenta_fg", priv->ls_colors_palette.magenta_fg);
+    gnome_cmd_data_get_color ("/colors/ls_colors_magenta_bg", priv->ls_colors_palette.magenta_bg);
+    gnome_cmd_data_get_color ("/colors/ls_colors_cyan_fg", priv->ls_colors_palette.cyan_fg);
+    gnome_cmd_data_get_color ("/colors/ls_colors_cyan_bg", priv->ls_colors_palette.cyan_bg);
+    gnome_cmd_data_get_color ("/colors/ls_colors_white_fg", priv->ls_colors_palette.white_fg);
+    gnome_cmd_data_get_color ("/colors/ls_colors_white_bg", priv->ls_colors_palette.white_bg);
+#endif
+
     priv->start_dirs[LEFT] = gnome_cmd_data_get_string ("/options/start_dir_left", g_get_home_dir ());
     priv->start_dirs[RIGHT] = gnome_cmd_data_get_string ("/options/start_dir_right", g_get_home_dir ());
 
@@ -1708,6 +1748,25 @@ void GnomeCmdData::save()
     gnome_cmd_data_set_bool   ("/devices/only_icon", device_only_icon);
     gnome_cmd_data_set_bool   ("/colors/use_ls_colors", use_ls_colors);
 
+#ifdef EDITABLE_LS_COLORS_PALETTE
+    gnome_cmd_data_set_color ("/colors/ls_colors_black_fg", priv->ls_colors_palette.black_fg);
+    gnome_cmd_data_set_color ("/colors/ls_colors_black_bg", priv->ls_colors_palette.black_bg);
+    gnome_cmd_data_set_color ("/colors/ls_colors_red_fg", priv->ls_colors_palette.red_fg);
+    gnome_cmd_data_set_color ("/colors/ls_colors_red_bg", priv->ls_colors_palette.red_bg);
+    gnome_cmd_data_set_color ("/colors/ls_colors_green_fg", priv->ls_colors_palette.green_fg);
+    gnome_cmd_data_set_color ("/colors/ls_colors_green_bg", priv->ls_colors_palette.green_bg);
+    gnome_cmd_data_set_color ("/colors/ls_colors_yellow_fg", priv->ls_colors_palette.yellow_fg);
+    gnome_cmd_data_set_color ("/colors/ls_colors_yellow_bg", priv->ls_colors_palette.yellow_bg);
+    gnome_cmd_data_set_color ("/colors/ls_colors_blue_fg", priv->ls_colors_palette.blue_fg);
+    gnome_cmd_data_set_color ("/colors/ls_colors_blue_bg", priv->ls_colors_palette.blue_bg);
+    gnome_cmd_data_set_color ("/colors/ls_colors_magenta_fg", priv->ls_colors_palette.magenta_fg);
+    gnome_cmd_data_set_color ("/colors/ls_colors_magenta_bg", priv->ls_colors_palette.magenta_bg);
+    gnome_cmd_data_set_color ("/colors/ls_colors_cyan_fg", priv->ls_colors_palette.cyan_fg);
+    gnome_cmd_data_set_color ("/colors/ls_colors_cyan_bg", priv->ls_colors_palette.cyan_bg);
+    gnome_cmd_data_set_color ("/colors/ls_colors_white_fg", priv->ls_colors_palette.white_fg);
+    gnome_cmd_data_set_color ("/colors/ls_colors_white_bg", priv->ls_colors_palette.white_bg);
+#endif
+
     const gchar *quick_connect_uri = gnome_cmd_con_get_uri (GNOME_CMD_CON (quick_connect));
 
     if (quick_connect_uri)
@@ -1831,6 +1890,14 @@ GnomeCmdColorTheme *gnome_cmd_data_get_custom_color_theme ()
 {
     return &gnome_cmd_data.priv->color_themes[GNOME_CMD_COLOR_CUSTOM];
 }
+
+
+#ifdef EDITABLE_LS_COLORS_PALETTE
+GnomeCmdLsColorsPalette *gnome_cmd_data_get_ls_colors_palette ()
+{
+    return &gnome_cmd_data.priv->ls_colors_palette;
+}
+#endif
 
 
 const gchar *gnome_cmd_data_get_list_font ()

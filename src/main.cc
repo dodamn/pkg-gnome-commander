@@ -113,7 +113,9 @@ int main (int argc, char *argv[])
                                   GNOME_PARAM_APP_DATADIR, DATADIR,
                                   GNOME_PARAM_NONE);
 
+#ifndef EDITABLE_LS_COLORS_PALETTE
     ls_colors_init ();
+#endif
     gdk_rgb_init ();
     gnome_vfs_init ();
 
@@ -121,6 +123,9 @@ int main (int argc, char *argv[])
     create_dir_if_needed (conf_dir);
     g_free (conf_dir);
     gnome_cmd_data.load();
+#ifdef EDITABLE_LS_COLORS_PALETTE
+    ls_colors_init ();
+#endif
     IMAGE_init ();
     gnome_cmd_data.load_more();
 

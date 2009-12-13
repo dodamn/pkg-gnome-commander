@@ -23,6 +23,9 @@
 #include "gnome-cmd-includes.h"
 #include "ls_colors.h"
 #include "gnome-cmd-file.h"
+#ifdef EDITABLE_LS_COLORS_PALETTE
+#include "gnome-cmd-data.h"
+#endif
 
 using namespace std;
 
@@ -30,7 +33,11 @@ using namespace std;
 #define DEFAULT_COLORS "no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.png=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:"
 
 
+#ifndef EDITABLE_LS_COLORS_PALETTE
 static GHashTable *map;
+#else
+static GHashTable *ls_colors_map;
+#endif
 static LsColor *type_colors[8];
 
 static GdkColor black   = {0,0,0,0};
@@ -54,8 +61,13 @@ static GdkColor white   = {0,0xffff,0xffff,0xffff};
 */
 inline GdkColor *code2color (gint code)
 {
+#ifdef EDITABLE_LS_COLORS_PALETTE
+    GnomeCmdLsColorsPalette *palette = gnome_cmd_data_get_ls_colors_palette ();
+#endif
+
     switch (code)
     {
+#ifndef EDITABLE_LS_COLORS_PALETTE
         case 30: return &black;
         case 31: return &red;
         case 32: return &green;
@@ -73,6 +85,25 @@ inline GdkColor *code2color (gint code)
         case 45: return &magenta;
         case 46: return &cyan;
         case 47: return &white;
+#else
+        case 30: return palette->black_fg;
+        case 31: return palette->red_fg;
+        case 32: return palette->green_fg;
+        case 33: return palette->yellow_fg;
+        case 34: return palette->blue_fg;
+        case 35: return palette->magenta_fg;
+        case 36: return palette->cyan_fg;
+        case 37: return palette->white_fg;
+
+        case 40: return palette->black_bg;
+        case 41: return palette->red_bg;
+        case 42: return palette->green_bg;
+        case 43: return palette->yellow_bg;
+        case 44: return palette->blue_bg;
+        case 45: return palette->magenta_bg;
+        case 46: return palette->cyan_bg;
+        case 47: return palette->white_bg;
+#endif
     }
 
     return NULL;
@@ -184,7 +215,11 @@ static void init (gchar *ls_colors)
         if (col)
         {
             if (col->ext)
+#ifndef EDITABLE_LS_COLORS_PALETTE
                 g_hash_table_insert (map, col->ext, col);
+#else
+                g_hash_table_insert (ls_colors_map, col->ext, col);
+#endif
             else
                 type_colors[col->type] = col;
         }
@@ -200,7 +235,11 @@ void ls_colors_init ()
     if (!s)
         s = DEFAULT_COLORS;
 
+#ifndef EDITABLE_LS_COLORS_PALETTE
     map = g_hash_table_new (g_str_hash, g_str_equal);
+#else
+   ls_colors_map = g_hash_table_new (g_str_hash, g_str_equal);
+#endif
     init (s);
 }
 
@@ -214,7 +253,11 @@ LsColor *ls_colors_get (GnomeCmdFile *f)
     const gchar *ext = gnome_cmd_file_get_extension (f);
 
     if (ext)
+#ifndef EDITABLE_LS_COLORS_PALETTE
         col = (LsColor *) g_hash_table_lookup (map, ext);
+#else
+        col = (LsColor *) g_hash_table_lookup (ls_colors_map, ext);
+#endif
 
     if (!col)
         col = type_colors[f->info->type];
