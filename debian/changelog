@@ -3,7 +3,7 @@ gnome-commander (1.2.8.4-0ubuntu1~ppa2~jaunty1) jaunty; urgency=low
   * Add a new feature
     - Support to edit LC_COLORS palette
 
- -- dodamn <dodamn@dodamn>  Sun, 13 Dec 2009 17:27:11 +0900
+ -- dodamn <dodamn@gmail.com>  Sun, 13 Dec 2009 17:27:11 +0900
 
 gnome-commander (1.2.8.4-0ubuntu1~ppa1~jaunty1) jaunty; urgency=low
 
