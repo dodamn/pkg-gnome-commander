@@ -8,6 +8,7 @@ AM_CPPFLAGS = \
 	$(GNOMEUI_CFLAGS) \
 	$(GNOMEVFS_CFLAGS) \
 	$(PYTHON_CFLAGS) \
+	$(UNIQUE_CFLAGS) \
 	-DDATADIR=\""$(datadir)"\"\
 	-DPLUGIN_DIR=\""$(libdir)/$(PACKAGE)/plugins"\"
 
@@ -108,6 +109,7 @@ gnome_commander_LDADD = \
 	$(POPPLER_LIBS) \
 	$(PYTHON_LIBS) \
 	$(PYTHON_EXTRA_LIBS) \
+	$(UNIQUE_LIBS) \
 	$(top_builddir)/libgcmd/libgcmd.la \
 	dialogs/libgcmd-dialogs.a \
 	tags/libgcmd-tags.a \
