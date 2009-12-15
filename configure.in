@@ -48,6 +48,7 @@ GNOME_REQ=2.0.0
 GNOMEUI_REQ=2.4.0
 GNOMEVFS_REQ=2.0.0
 PYTHON_REQ=2.4
+UNIQUE_REQ=1.0.8
 EXIV2_REQ=0.14
 TAGLIB_REQ=1.4
 LIBGSF_REQ=1.12.0
@@ -59,6 +60,7 @@ AC_SUBST(GNOME_REQ)
 AC_SUBST(GNOMEUI_REQ)
 AC_SUBST(GNOMEVFS_REQ)
 AC_SUBST(PYTHON_REQ)
+AC_SUBST(UNIQUE_REQ)
 AC_SUBST(EXIV2_REQ)
 AC_SUBST(TAGLIB_REQ)
 AC_SUBST(LIBGSF_REQ)
@@ -185,6 +187,28 @@ if pkg-config --exists gnome-vfs-2.0 ; then
         AC_MSG_RESULT(yes)
     else
         AC_MSG_ERROR("only ${GNOMEVFS_VERSION} found")
+    fi
+else
+    AC_MSG_ERROR(no)
+fi
+
+
+dnl Check for unique
+AC_MSG_CHECKING(if unique >= ${UNIQUE_REQ} exists)
+if pkg-config --exists unique-1.0 ; then
+    UNIQUE_CFLAGS=`pkg-config --cflags unique-1.0`
+    UNIQUE_LIBS=`pkg-config --libs unique-1.0`
+    UNIQUE_PREFIX=`pkg-config --variable=prefix unique-1.0`
+    UNIQUE_VERSION=`pkg-config --modversion unique-1.0`
+    AC_SUBST(UNIQUE_VERSION)
+    AC_SUBST(UNIQUE_PREFIX)
+    AC_SUBST(UNIQUE_CFLAGS)
+    AC_SUBST(UNIQUE_LIBS)
+
+    if pkg-config --exists unique-1.0 '>=' ${UNIQUE_REQ} ; then
+        AC_MSG_RESULT(yes)
+    else
+        AC_MSG_ERROR("only ${UNIQUE_VERSION} found")
     fi
 else
     AC_MSG_ERROR(no)
@@ -440,6 +464,7 @@ echo "  gnome-vfs: ${GNOMEVFS_VERSION}	in ${GNOMEVFS_PREFIX}"
 if test "x$have_python" = "xyes"; then
 echo "  python   : ${PYTHON_VERSION}	in ${PY_EXEC_PREFIX}"
 fi
+echo "  unique   : ${UNIQUE_VERSION}	in ${UNIQUE_PREFIX}"
 echo ""
 echo ""
 echo "Type 'make' to build $PACKAGE-$VERSION and then 'make install' to install"

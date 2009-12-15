@@ -476,6 +476,12 @@
               </listitem>
               <listitem>
                 <para>
+                  <guilabel>-n, --new-instance</guilabel>
+                </para>
+                <para>Run a new instance of GNOME Commander.</para>
+              </listitem>
+              <listitem>
+                <para>
                   <guilabel>[gtk,gnome,bonobo options]</guilabel>
                 </para>
                 <para>Standard gtk, gnome, bonobo options are supported.

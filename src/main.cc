@@ -20,6 +20,7 @@
 
 #include <config.h>
 #include <locale.h>
+#include <unique/unique.h>
 
 #include "gnome-cmd-includes.h"
 #include "gnome-cmd-main-win.h"
@@ -44,6 +45,7 @@ GtkWidget *main_win_widget;
 gchar *start_dir_left;
 gchar *start_dir_right;
 gchar *debug_flags;
+gboolean run_new_instance = FALSE;
 
 #ifdef HAVE_LOCALE_H
 struct lconv *locale_information;
@@ -62,6 +64,7 @@ struct poptOption popt_options[] = {
     {"debug", 'd', POPT_ARG_STRING, &debug_flags, 0, N_("Specify debug flags to use"), NULL},
     {"start-left-dir", 'l', POPT_ARG_STRING, &start_dir_left, 0, N_("Specify the start directory for the left pane"), NULL},
     {"start-right-dir", 'r', POPT_ARG_STRING, &start_dir_right, 0, N_("Specify the start directory for the right pane"), NULL},
+    {"new-instance", 'n', POPT_ARG_NONE, &run_new_instance, 0, N_("Run a new instance of GNOME Commander"), NULL},
     {NULL, 0, 0, NULL, 0, NULL, NULL}
 };
 
@@ -80,6 +83,7 @@ int main (int argc, char *argv[])
     GnomeProgram *program;
     GOptionContext *option_context;
     gchar *conf_dir;
+    UniqueApp *unique_app = NULL;
 
     main_win = NULL;
 
@@ -113,6 +117,21 @@ int main (int argc, char *argv[])
                                   GNOME_PARAM_APP_DATADIR, DATADIR,
                                   GNOME_PARAM_NONE);
 
+    if (!run_new_instance) {
+        unique_app = unique_app_new ("org.gnome.GnomeCommander", NULL);
+        g_return_val_if_fail (unique_app != NULL, 0);
+
+        if (unique_app_is_running (unique_app)) {
+            UniqueResponse response = unique_app_send_message (unique_app, UNIQUE_ACTIVATE, NULL);
+
+            g_object_unref (unique_app);
+
+            g_return_val_if_fail (response == UNIQUE_RESPONSE_OK, 0);
+
+            return 0;
+        }
+    }
+
     ls_colors_init ();
     gdk_rgb_init ();
     gnome_vfs_init ();
@@ -133,6 +152,10 @@ int main (int argc, char *argv[])
     gcmd_user_actions.init();
 
     main_win_widget = gnome_cmd_main_win_new ();
+
+    if (!run_new_instance)
+        unique_app_watch_window (unique_app, GTK_WINDOW (main_win_widget));
+
     main_win = GNOME_CMD_MAIN_WIN (main_win_widget);
     gtk_widget_show (GTK_WIDGET (main_win));
     gcmd_owner.load_async();
@@ -159,6 +182,9 @@ int main (int argc, char *argv[])
 
     g_option_context_free (option_context);
     g_object_unref (program);
+
+    if (!run_new_instance)
+        g_object_unref (unique_app);
 
     DEBUG ('c', "dirs total: %d remaining: %d\n", created_dirs_cnt, created_dirs_cnt - deleted_dirs_cnt);
     DEBUG ('c', "files total: %d remaining: %d\n", created_files_cnt, created_files_cnt - deleted_files_cnt);
