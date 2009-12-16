@@ -1,3 +1,10 @@
+gnome-commander (1.2.8.4-0ubuntu1~ppa4~jaunty1) jaunty; urgency=low
+
+  * Add a feature to run GNOME Commander in single instance mode
+  * Change configure script from ./configure to ./autogen.sh
+
+ -- dodamn <dodamn@gmail.com>  Wed, 16 Dec 2009 17:45:26 +0900
+
 gnome-commander (1.2.8.4-0ubuntu1~ppa3~jaunty1) jaunty; urgency=low
 
   * Fix a bug with lost cursor
