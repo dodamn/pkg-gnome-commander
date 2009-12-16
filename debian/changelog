@@ -1,3 +1,10 @@
+gnome-commander (1.2.8.4-0ubuntu1~ppa5~jaunty1) jaunty; urgency=low
+
+  * Fix a bug with missed build-dependencies
+    - Add build-dependencies to gnome-common and libunique-dev (>= 1.0.8)
+
+ -- dodamn <dodamn@gmail.com>  Wed, 16 Dec 2009 19:50:52 +0900
+
 gnome-commander (1.2.8.4-0ubuntu1~ppa4~jaunty1) jaunty; urgency=low
 
   * Add a feature to run GNOME Commander in single instance mode
