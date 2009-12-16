@@ -5,4 +5,5 @@ include /usr/share/cdbs/1/rules/patchsys-quilt.mk
 
 DEB_CONFIGURE_EXTRA_FLAGS += --disable-scrollkeeper
 CPPFLAGS += -DEDITABLE_LS_COLORS_PALETTE
+DEB_CONFIGURE_SCRIPT := ./autogen.sh
 
