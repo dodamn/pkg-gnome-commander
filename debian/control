@@ -15,7 +15,9 @@ Build-Depends: cdbs, debhelper (>= 5),
  libtag1-dev (>= 1.4),
  libexiv2-dev (>= 0.14),
  libpoppler-dev (>= 0.6),
- quilt
+ quilt,
+ gnome-common,
+ libunique-dev (>= 1.0.8)
 Standards-Version: 3.8.3
 
 Package: gnome-commander
