@@ -1,3 +1,9 @@
+gnome-commander (1.2.8.4-0ubuntu1~ppa7~jaunty1) jaunty; urgency=low
+
+  * Refix the bug with lost cursor
+
+ -- dodamn <dodamn@gmail.com>  Fri, 18 Dec 2009 21:12:50 +0900
+
 gnome-commander (1.2.8.4-0ubuntu1~ppa6~jaunty1) jaunty; urgency=low
 
   * Refix the bug with lost cursor
