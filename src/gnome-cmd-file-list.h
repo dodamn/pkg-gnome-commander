@@ -157,6 +157,8 @@ struct GnomeCmdFileList
     void update_style();
 
     gboolean key_pressed(GdkEventKey *event);
+
+    void reset_current_file();
 };
 
 

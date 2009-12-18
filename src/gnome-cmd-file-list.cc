@@ -1710,7 +1710,7 @@ void GnomeCmdFileList::focus_file(const gchar *focus_file, gboolean scroll_to_fi
 
 void GnomeCmdFileList::select_row(gint row)
 {
-    focus_file_at_row (this, row==-1 ? 0 : row);
+    focus_file_at_row (this, row==-1 ? priv->cur_file : row);
 }
 
 
@@ -2257,4 +2257,12 @@ void GnomeCmdFileList::invalidate_tree_size()
         if (f->info->type == GNOME_VFS_FILE_TYPE_DIRECTORY)
             gnome_cmd_file_invalidate_tree_size (f);
     }
+}
+
+
+void GnomeCmdFileList::reset_current_file()
+{
+    g_return_if_fail (this->priv != NULL);
+
+    this->priv->cur_file = 0;
 }

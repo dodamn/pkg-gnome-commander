@@ -1021,6 +1021,7 @@ static void on_dir_list_ok (GnomeCmdDir *dir, GList *files, GnomeCmdFileSelector
     if (!fs->priv->active)
     {
         GTK_CLIST (fs->file_list())->focus_row = -1;
+        fs->file_list()->reset_current_file();
         gtk_clist_unselect_all (GTK_CLIST (fs->file_list()));
     }
 

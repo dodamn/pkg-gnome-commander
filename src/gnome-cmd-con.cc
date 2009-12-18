@@ -549,8 +549,11 @@ GnomeCmdDir *gnome_cmd_con_cache_lookup (GnomeCmdCon *con, const gchar *uri_str)
     if (con->priv->all_dirs_map)
         dir = (GnomeCmdDir *) g_hash_table_lookup (con->priv->all_dirs_map, uri_str);
 
-    if (dir)
+    if (dir) {
+        dir->voffset = 0;
+
         DEBUG ('k', "FOUND 0x%p %s in the hash-table, reusing it!\n", dir, uri_str);
+    }
     else
         DEBUG ('k', "FAILED to find %s in the hash-table\n", uri_str);
 

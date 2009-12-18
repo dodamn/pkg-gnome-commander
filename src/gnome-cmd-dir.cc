@@ -274,7 +274,6 @@ GnomeCmdDir *gnome_cmd_dir_new_from_info (GnomeVFSFileInfo *info, GnomeCmdDir *p
     {
         gtk_object_destroy (GTK_OBJECT (path));
         gnome_cmd_file_update_info (GNOME_CMD_FILE (dir), info);
-        dir->voffset = 0;
         return dir;
     }
 
