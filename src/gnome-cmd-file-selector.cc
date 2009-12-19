@@ -1570,6 +1570,10 @@ void gnome_cmd_file_selector_set_directory_to_opposite (GnomeCmdMainWin *mw, Fil
             dir = gnome_cmd_dir_new_from_info (file->info, dir);
     }
 
+    if (dir != NULL) {
+        dir->voffset = 0;
+    }
+
     set_connection (fs, other->get_connection(), dir);
 
     other->set_active(!fs_is_active);
